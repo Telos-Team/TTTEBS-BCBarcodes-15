@@ -49,9 +49,9 @@ report 80281 "TTTEBS-BCItemLabels"
                 begin
                     IF v_PrintWOBarcode then
                         exit;
-                    if v_BarcodeType = v_BarcodeType::EAN13 then
-                        IF StrLen("Cross-Reference No.") <> 12 then
-                            Error('Barcode Value must be 12 sign long!');
+                    if strpos(v_BarcodeType, 'EAN13') > 0 then
+                        if StrLen("Cross-Reference No.") <> 12 then
+                            Error(Text003Lbl);
                     c_BarCodeFromURL.CreateBarcode(r_BarcodeEntries,
                                                     RecordId,
                                                     "Cross-Reference No.",
@@ -124,9 +124,10 @@ report 80281 "TTTEBS-BCItemLabels"
         c_BarCodeFromURL: Codeunit "TTTEBS-BCBarCodeURL";
         v_PrintWOBarcode: Boolean;
         v_Type: code[20];
-        v_BarcodeType: Enum "TTTEBS-BCBarcodeTypeEnum2";
+        v_BarcodeType: Code[20];
         v_Height: Integer;
         v_Width: Integer;
         v_WithText: Boolean;
+        Text003Lbl: Label 'Barcode Value must be 12 sign long!';
 
 }
