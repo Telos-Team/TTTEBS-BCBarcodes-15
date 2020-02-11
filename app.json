@@ -1,0 +1,38 @@
+{
+  "id": "734bbe4f-29b6-4635-a36a-10d86c78039a",
+  "name": "TTTEBS-BCBarcodes (BC150)",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "Telos Team - Barcode",
+  "description": "Telos Team - For creating and saving barcodes",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "http://telosteam.dk",
+  "logo": "./logo/TTLogo.JPG",
+  "dependencies": [
+    {
+      "appId": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+      "publisher": "Microsoft",
+      "name": "System Application",
+      "version": "1.0.0.0"
+    },
+    {
+      "appId": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+      "publisher": "Microsoft",
+      "name": "Base Application",
+      "version": "15.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "15.0.0.0",
+  "idRanges": [
+    {
+      "from": 80281,
+      "to": 80296
+    }
+  ],
+  "contextSensitiveHelpUrl": "https://ALProject2.com/help/",
+  "showMyCode": true,
+  "runtime": "4.0"
+}

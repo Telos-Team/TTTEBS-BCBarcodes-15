@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Your own server",
+            "server": "http://bcsandbox",
+            "serverInstance": "BC",
+            "authentication": "Windows",
+            "startupObjectId": 80283,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        },
+        {
+            "type": "al",
+            "request": "launch",
+            "name": "Local-bc150",
+            "server": "http://localhost:15049",
+            "serverInstance": "bc150",
+            "authentication": "Windows",
+            "startupObjectId": 80283,
+            "startupObjectType": "Page",
+            "breakOnError": true,
+            "launchBrowser": true,
+            "schemaUpdateMode": "Recreate"  // TTTEBS -> Slet data - kun udv!
+        }
+    ]
+}
