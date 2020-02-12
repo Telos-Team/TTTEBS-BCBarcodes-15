@@ -1,30 +1,30 @@
-report 80282 "TTTEBS-BCBarcodeEntriesPicture"
+report 80282 "TTT-EBS-BCBarcodeEntriesPictur"
 {
     UsageCategory = Lists;
     ApplicationArea = All;
 
     DefaultLayout = RDLC;
-    RDLCLayout = '.\src\BarcodeEntriesPicture.Report.rdl';
+    RDLCLayout = '.\src\BCBarcodeEntriesPictur.Report.rdl';
     Caption = 'Barcode Entries Picture';
     PreviewMode = Normal;
 
     dataset
     {
-        dataitem(TTTEBSBCBarcodeEntries; "TTTEBS-BCBarcodeEntries")
+        dataitem(TTTEBSBCBarcodeEntries; "TTT-EBS-BCBarcodeEntries")
         {
-            column(BarcodeType; "Barcode Type")
+            column(BarcodeType; "BarcodeType")
             {
             }
-            column(BarcodeValue; "Barcode Value")
+            column(BarcodeValue; "BarcodeValue")
             {
             }
-            column(EntryNo; "Entry No.")
+            column(EntryNo; "EntryNo.")
             {
             }
-            column(LinkSID; "Link SID")
+            column(LinkSID; "LinkSID")
             {
             }
-            column(WithText; "With Text")
+            column(WithText; "WithText")
             {
             }
             column(Barcode; Barcode)

@@ -3,11 +3,11 @@
   "name": "TTTEBS-BCBarcodes (BC150)",
   "publisher": "Default publisher",
   "version": "1.0.0.0",
-  "brief": "Telos Team - Barcode",
-  "description": "Telos Team - For creating and saving barcodes",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
+  "brief": "Telos Team - Barcode (BC)",
+  "description": "Telos Team - For creating and saving barcodes.",
+  "privacyStatement": "http://telosteam.dk/privacy",
+  "EULA": "http://telosteam.dk/eula",
+  "help": "http://telosteam.dk/support",
   "url": "http://telosteam.dk",
   "logo": "./logo/TTLogo.JPG",
   "dependencies": [
@@ -34,5 +34,8 @@
   ],
   "contextSensitiveHelpUrl": "https://ALProject2.com/help/",
   "showMyCode": true,
-  "runtime": "4.0"
+  "runtime": "4.0",
+  "features": [
+    "TranslationFile"
+  ]
 }

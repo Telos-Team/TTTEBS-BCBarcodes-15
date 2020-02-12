@@ -1,7 +1,7 @@
-page 80281 "TTTEBS-BCBarcodeList"
+page 80281 "TTT-EBS-BCBarcodeList"
 {
     PageType = List;
-    SourceTable = "TTTEBS-BCBarcode";
+    SourceTable = "TTT-EBS-BCBarcode";
     Caption = 'Barcode List';
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -15,21 +15,26 @@ page 80281 "TTTEBS-BCBarcodeList"
         {
             repeater(General)
             {
-                field("Table ID"; "Table ID")
+                field("Table ID"; "TableID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies Table ID of which table the Barcode is generated (Part of primary key)';
                 }
-                field("Link SID"; "Link SID")
+                field("Link SID"; "LinkSID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the unik System ID from the linked Table-ID (Part of primary key)';
+
                 }
-                field("Link RID"; "Link Record ID")
+                field("Link RID"; "LinkRecordID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the unik Record ID from wich the Barcode is generated';
                 }
                 field("SID"; Format(SystemId))
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the System ID of the current record';
                 }
             }
         }
@@ -49,13 +54,16 @@ page 80281 "TTTEBS-BCBarcodeList"
                     Caption = 'Barcode Entries';
                     ApplicationArea = All;
                     PromotedCategory = Process;
+                    Image = "8ball";
+                    PromotedOnly = true;
+                    ToolTip = 'View the linked Barcode Entries';
 
                     trigger OnAction()
                     var
-                        lr_BarcodeEntries: Record "TTTEBS-BCBarcodeEntries";
+                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
                     begin
-                        lr_BarcodeEntries.setrange("Link SID", format(SystemId));
-                        Page.Run(page::"TTTEBS-BCBarcodeEntriesList", lr_BarcodeEntries);
+                        lr_BarcodeEntries.setrange("LinkSID", format(SystemId));
+                        Page.Run(page::"TTT-EBS-BCBarcodeEntriesList", lr_BarcodeEntries);
                     end;
                 }
             }

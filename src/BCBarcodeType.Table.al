@@ -1,7 +1,9 @@
-table 80283 "TTTEBS-BCBarcodeType"
+table 80283 "TTT-EBS-BCBarcodeType"
 {
     Caption = 'Barcode Types';
     DataClassification = CustomerContent;
+    LookupPageId = "TTT-EBS-BCBarcodeTypeList";
+    DrillDownPageId = "TTT-EBS-BCBarcodeTypeList";
 
     fields
     {
@@ -21,6 +23,12 @@ table 80283 "TTTEBS-BCBarcodeType"
         key(PK; Code)
         {
             Clustered = true;
+        }
+    }
+    fieldgroups
+    {
+        fieldgroup(DropDown; "Code", URL)
+        {
         }
     }
 }

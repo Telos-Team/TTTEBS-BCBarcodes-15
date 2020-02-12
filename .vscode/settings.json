@@ -1,0 +1,13 @@
+{
+    "al.codeAnalyzers":  [
+                             "${AppSourceCop}",
+                             "${CodeCop}",
+                             "${PerTenantExtensionCop}",
+                             "${UICop}"
+                         ],
+    "al.enableCodeAnalysis":  true,
+    "CRS.ObjectNamePrefix": "TTT-EBS",
+    // "CRS.OnSaveAlFileAction": "Rename",
+    "al.packageCachePath":  "./.alpackages",
+    "al.ruleSetPath": "./.vscode/TTT.ruleset.json"
+}

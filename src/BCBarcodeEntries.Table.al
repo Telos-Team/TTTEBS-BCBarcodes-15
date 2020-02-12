@@ -1,16 +1,18 @@
-table 80282 "TTTEBS-BCBarcodeEntries"
+table 80282 "TTT-EBS-BCBarcodeEntries"
 {
     Caption = 'Barcode Entries';
     DataClassification = CustomerContent;
+    LookupPageId = "TTT-EBS-BCBarcodeEntriesList";
+    DrillDownPageId = "TTT-EBS-BCBarcodeEntriesList";
 
     fields
     {
-        field(1; "Link SID"; Guid)
+        field(1; "LinkSID"; Guid)
         {
             Caption = 'Link SID';
             DataClassification = SystemMetadata;
         }
-        field(2; "Entry No."; Integer)
+        field(2; "EntryNo."; Integer)
         {
             Caption = 'Entry No.';
             DataClassification = CustomerContent;
@@ -20,7 +22,7 @@ table 80282 "TTTEBS-BCBarcodeEntries"
             Caption = 'Type';
             DataClassification = CustomerContent;
         }
-        field(120; "Barcode Type"; Code[20])
+        field(120; "BarcodeType"; Code[20])
         {
             Caption = 'Barcode Type';
             DataClassification = CustomerContent;
@@ -35,12 +37,12 @@ table 80282 "TTTEBS-BCBarcodeEntries"
             Caption = 'Width';
             DataClassification = CustomerContent;
         }
-        field(150; "With Text"; Boolean)
+        field(150; "WithText"; Boolean)
         {
             Caption = 'With Text';
             DataClassification = CustomerContent;
         }
-        field(160; "Barcode Value"; Code[20])
+        field(160; "BarcodeValue"; Code[20])
         {
             Caption = 'Barcode Value';
             DataClassification = CustomerContent;
@@ -53,9 +55,24 @@ table 80282 "TTTEBS-BCBarcodeEntries"
     }
     keys
     {
-        key(PK; "Link SID", "Entry No.")
+        key(PK; "LinkSID", "EntryNo.")
         {
             Clustered = true;
+        }
+        key(Key2; "Type")
+        {
+        }
+        key(Key3; "BarcodeType")
+        {
+        }
+        key(Key4; "Height")
+        {
+        }
+        key(Key5; "Width")
+        {
+        }
+        key(Key6; "WithText")
+        {
         }
     }
 }

@@ -1,7 +1,9 @@
-page 80283 "TTTEBS-BCTestPage"
+page 80283 "TTT-EBS-BCTestPage"
 {
     PageType = Card;
     Caption = 'Test Page';
+    ApplicationArea = all;
+    UsageCategory = Lists;
 
     layout
     {
@@ -13,15 +15,19 @@ page 80283 "TTTEBS-BCTestPage"
                 {
                     ApplicationArea = All;
                     TableRelation = Item;
+                    ToolTip = 'Specifies Item No. - Only for testing';
                 }
                 field("Customer No."; r_Cust."No.")
                 {
                     ApplicationArea = All;
                     TableRelation = Customer;
+                    ToolTip = 'Specifies Customer No. - Only for testing';
                 }
                 field("Barcode Value"; v_BarcodeValue)
                 {
                     ApplicationArea = All;
+                    Caption = 'Barcode Value';
+                    ToolTip = 'Specifies the Barcode Value, on wich we generate the Barcode blob - Only for testing';
                 }
             }
             group(Parameters)
@@ -29,23 +35,33 @@ page 80283 "TTTEBS-BCTestPage"
                 field("Type"; v_Type)
                 {
                     ApplicationArea = All;
+                    Caption = 'Type';
+                    ToolTip = 'Specifies Type - Only for testing';
                 }
                 field("Barcode Type"; v_BarcodeType)
                 {
                     ApplicationArea = All;
-                    TableRelation = "TTTEBS-BCBarcodeType";
+                    Caption = 'Barcode Type';
+                    TableRelation = "TTT-EBS-BCBarcodeType";
+                    ToolTip = 'Specifies Barcode Type - Only for testing';
                 }
                 field("Height"; v_Height)
                 {
                     ApplicationArea = All;
+                    Caption = 'Height';
+                    ToolTip = 'Specifies Height - Only for testing';
                 }
                 field("Width"; v_Width)
                 {
                     ApplicationArea = All;
+                    Caption = 'Width';
+                    ToolTip = 'Specifies Width - Only for testing';
                 }
                 field("With Text"; v_WithText)
                 {
                     ApplicationArea = All;
+                    Caption = 'With Text';
+                    ToolTip = 'Specifies With Text - Only for testing';
                 }
             }
         }
@@ -66,10 +82,12 @@ page 80283 "TTTEBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
+                    Image = "8ball";
+                    ToolTip = 'View Barcode List - Only for testing';
 
                     trigger OnAction()
                     begin
-                        Page.Run(page::"TTTEBS-BCBarcodeList");
+                        Page.Run(page::"TTT-EBS-BCBarcodeList");
                     end;
                 }
                 action(BarcodeEntriesList)
@@ -80,10 +98,12 @@ page 80283 "TTTEBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
+                    Image = "8ball";
+                    ToolTip = 'View Barcode Entries List - Only for testing';
 
                     trigger OnAction()
                     begin
-                        Page.Run(page::"TTTEBS-BCBarcodeEntriesList");
+                        Page.Run(page::"TTT-EBS-BCBarcodeEntriesList");
                     end;
                 }
                 action(BarcodeTypeList)
@@ -94,10 +114,12 @@ page 80283 "TTTEBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
+                    Image = "8ball";
+                    ToolTip = 'View Barcode Type List - Only for testing';
 
                     trigger OnAction()
                     begin
-                        Page.Run(page::"TTTEBS-BCBarcodeTypeList");
+                        Page.Run(page::"TTT-EBS-BCBarcodeTypeList");
                     end;
                 }
             }
@@ -113,13 +135,15 @@ page 80283 "TTTEBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
+                    Image = "8ball";
+                    ToolTip = 'Create Test Barcode - Only for testing';
 
                     trigger OnAction()
                     var
-                        lc_BarcodeFromURL: Codeunit "TTTEBS-BCBarcodeURL";
-                        lr_BarcodeEntries: Record "TTTEBS-BCBarcodeEntries";
+                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
                         lr_Item: Record Item;
                         lr_Cust: Record Customer;
+                        lc_BarcodeFromURL: Codeunit "TTT-EBS-BCBarcodeURL";
                     begin
                         if not confirm(Text001Lbl, true) then
                             error(Text002Lbl);
@@ -128,9 +152,9 @@ page 80283 "TTTEBS-BCTestPage"
                             if StrLen(v_BarcodeValue) <> 12 then
                                 Error(Text003Lbl);
 
-                        if lr_Item.get(r_Item."No.") then begin
+                        if lr_Item.get(r_Item."No.") then
                             lc_BarcodeFromURL.CreateBarcode(lr_BarcodeEntries,
-                                                            lr_Item.RecordId,
+                                                            lr_Item.RecordId(),
                                                             v_BarcodeValue,
                                                             v_Type,
                                                             format(v_BarcodeType),
@@ -138,10 +162,9 @@ page 80283 "TTTEBS-BCTestPage"
                                                             v_Width,
                                                             v_WithText
                                                             );
-                        end;
-                        if lr_Cust.get(r_Cust."No.") then begin
+                        if lr_Cust.get(r_Cust."No.") then
                             lc_BarcodeFromURL.CreateBarcode(lr_BarcodeEntries,
-                                                            lr_Cust.RecordId,
+                                                            lr_Cust.RecordId(),
                                                             v_BarcodeValue,
                                                             v_Type,
                                                             format(v_BarcodeType),
@@ -149,7 +172,6 @@ page 80283 "TTTEBS-BCTestPage"
                                                             v_Width,
                                                             v_WithText
                                                             );
-                        end;
                     end;
                 }
                 action("BarCodeReport01")
@@ -160,11 +182,13 @@ page 80283 "TTTEBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Report;
                     PromotedOnly = true;
+                    Image = "8ball";
+                    ToolTip = 'Run test report - "Item Labels", that also generate barcodes - Only for testing';
 
                     trigger OnAction();
 
                     begin
-                        Report.Run(report::"TTTEBS-BCItemLabels");
+                        Report.Run(report::"TTT-EBS-BCItemLabels");
                     end;
                 }
 
@@ -181,7 +205,6 @@ page 80283 "TTTEBS-BCTestPage"
         r_Cust: record Customer;
         v_BarcodeValue: Code[20];
         v_Type: code[20];
-        // v_BarcodeType: Enum "TTTEBS-BCBarcodeTypeEnum2";
         v_BarcodeType: Code[20];
         v_Height: Integer;
         v_Width: Integer;

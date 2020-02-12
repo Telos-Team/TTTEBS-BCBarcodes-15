@@ -1,8 +1,8 @@
-page 80285 "TTTEBS-BCBarcodeTypeList"
+page 80285 "TTT-EBS-BCBarcodeTypeList"
 {
 
     PageType = List;
-    SourceTable = "TTTEBS-BCBarcodeType";
+    SourceTable = "TTT-EBS-BCBarcodeType";
     Caption = 'Barcode Type List';
     ApplicationArea = All;
     // UsageCategory = Administration;
@@ -17,10 +17,12 @@ page 80285 "TTTEBS-BCBarcodeTypeList"
                 field(Code; Code)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the "Barcode" Code (Primary Key)';
                 }
                 field(URL; URL)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the URL used, to generate the Barcode - See: https://barcode.tec-it.com/en';
                 }
             }
         }

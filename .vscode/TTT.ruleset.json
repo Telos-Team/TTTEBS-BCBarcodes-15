@@ -1,0 +1,11 @@
+{
+    "name": "TTT-EBS",
+    "description": "TTT Rule Exceptions",
+    "rules": [
+        {
+            "id": "AA0000",
+            "action": "None",
+            "justification": "Demo."
+        }
+    ]
+}

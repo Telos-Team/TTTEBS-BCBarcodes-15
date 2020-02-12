@@ -1,8 +1,8 @@
-page 80282 "TTTEBS-BCBarcodeEntriesList"
+page 80282 "TTT-EBS-BCBarcodeEntriesList"
 {
 
     PageType = List;
-    SourceTable = "TTTEBS-BCBarcodeEntries";
+    SourceTable = "TTT-EBS-BCBarcodeEntries";
     Caption = 'Barcode Entries List';
     ApplicationArea = All;
     UsageCategory = Lists;
@@ -16,46 +16,57 @@ page 80282 "TTTEBS-BCBarcodeEntriesList"
         {
             repeater(General)
             {
-                field("Link SID"; "Link SID")
+                field("Link SID"; "LinkSID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the System ID from the linked table Barcode (Part of primary key)';
                 }
-                field("Entry No."; "Entry No.")
+                field("Entry No."; "EntryNo.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies several Barcode Entries per Barcode (Part of primary key)';
                 }
                 field(Type; Type)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies a type - Optional';
                 }
-                field("Barcode Type"; "Barcode Type")
+                field("Barcode Type"; "BarcodeType")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies wich Barcode Type used (EAN13, Code128, QR, and so on..)';
                 }
                 field(Height; Height)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the Hight of the Barcode Blob - Optional';
                 }
                 field(Width; Width)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the Width of the Barcode Blob - Optional';
                 }
-                field("With Text"; "With Text")
+                field("With Text"; "WithText")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies if the Barcode Blob is With Text - Optional';
                 }
-                field("Barcode Value"; "Barcode Value")
+                field("Barcode Value"; "BarcodeValue")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Barcode';
                 }
                 field("Barcode HasValue"; v_Barcode)
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    Caption = 'Barcode HasValue';
+                    ToolTip = 'Specifies if the Barcode has value';
                 }
                 field("SID"; Format(SystemId))
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the System ID of the current record';
                 }
             }
         }
@@ -75,14 +86,17 @@ page 80282 "TTTEBS-BCBarcodeEntriesList"
                     Caption = 'Show Barcode';
                     ApplicationArea = All;
                     PromotedCategory = Process;
+                    Image = "8ball";
+                    PromotedOnly = true;
+                    ToolTip = 'View the Barcode';
 
                     trigger OnAction()
                     var
-                        lr_BarcodeEntries: Record "TTTEBS-BCBarcodeEntries";
+                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
                     begin
-                        lr_BarcodeEntries.setrange("Link SID", "Link SID");
-                        lr_BarcodeEntries.SetRange("Entry No.", "Entry No.");
-                        report.Run(report::"TTTEBS-BCBarcodeEntriesPicture", true, true, lr_BarcodeEntries);
+                        lr_BarcodeEntries.setrange("LinkSID", "LinkSID");
+                        lr_BarcodeEntries.SetRange("EntryNo.", "EntryNo.");
+                        report.Run(report::"TTT-EBS-BCBarcodeEntriesPictur", true, true, lr_BarcodeEntries);
                     end;
                 }
             }
@@ -91,7 +105,7 @@ page 80282 "TTTEBS-BCBarcodeEntriesList"
     trigger OnAfterGetRecord()
     begin
         CalcFields(Barcode);
-        IF barcode.HasValue then
+        IF barcode.HasValue() then
             v_Barcode := true;
     end;
 

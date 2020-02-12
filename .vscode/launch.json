@@ -13,7 +13,9 @@
             "breakOnError": true,
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true
+            "enableSqlInformationDebugger": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10
         },
         {
             "type": "al",
@@ -26,6 +28,10 @@
             "startupObjectType": "Page",
             "breakOnError": true,
             "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
             "schemaUpdateMode": "Recreate"  // TTTEBS -> Slet data - kun udv!
         }
     ]

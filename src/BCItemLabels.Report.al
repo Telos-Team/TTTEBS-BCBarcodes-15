@@ -1,10 +1,10 @@
-report 80281 "TTTEBS-BCItemLabels"
+report 80281 "TTT-EBS-BCItemLabels"
 {
     UsageCategory = Lists;
     ApplicationArea = All;
 
     DefaultLayout = RDLC;
-    RDLCLayout = '.\src\ItemLabels.Report.rdl';
+    RDLCLayout = '.\src\BCItemLabels.Report.rdl';
     Caption = 'Item Labels';
 
     UseRequestPage = true;
@@ -39,7 +39,7 @@ report 80281 "TTTEBS-BCItemLabels"
                 column(Barcode; r_BarcodeEntries."Barcode")
                 {
                 }
-                column(BarcodeValue_BarcodeEntries; r_BarcodeEntries."Barcode Value")
+                column(BarcodeValue_BarcodeEntries; r_BarcodeEntries."BarcodeValue")
                 {
                 }
                 column(PrintWOBarcode; v_PrintWOBarcode)
@@ -53,7 +53,7 @@ report 80281 "TTTEBS-BCItemLabels"
                         if StrLen("Cross-Reference No.") <> 12 then
                             Error(Text003Lbl);
                     c_BarCodeFromURL.CreateBarcode(r_BarcodeEntries,
-                                                    RecordId,
+                                                    RecordId(),
                                                     "Cross-Reference No.",
                                                     v_Type,
                                                     Format(v_BarcodeType),
@@ -120,8 +120,8 @@ report 80281 "TTTEBS-BCItemLabels"
         PackingDateLbl = 'Packing Date';
     }
     var
-        r_BarcodeEntries: record "TTTEBS-BCBarcodeEntries";
-        c_BarCodeFromURL: Codeunit "TTTEBS-BCBarCodeURL";
+        r_BarcodeEntries: record "TTT-EBS-BCBarcodeEntries";
+        c_BarCodeFromURL: Codeunit "TTT-EBS-BCBarCodeURL";
         v_PrintWOBarcode: Boolean;
         v_Type: code[20];
         v_BarcodeType: Code[20];
