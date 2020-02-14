@@ -53,6 +53,7 @@ table 80282 "TTT-EBS-BCBarcodeEntries"
             DataClassification = CustomerContent;
         }
     }
+
     keys
     {
         key(PK; "LinkSID", "EntryNo.")

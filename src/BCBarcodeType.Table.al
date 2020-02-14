@@ -18,6 +18,7 @@ table 80283 "TTT-EBS-BCBarcodeType"
             DataClassification = CustomerContent;
         }
     }
+
     keys
     {
         key(PK; Code)
@@ -25,6 +26,7 @@ table 80283 "TTT-EBS-BCBarcodeType"
             Clustered = true;
         }
     }
+
     fieldgroups
     {
         fieldgroup(DropDown; "Code", URL)

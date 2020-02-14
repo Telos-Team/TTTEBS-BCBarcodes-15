@@ -66,6 +66,7 @@ page 80283 "TTT-EBS-BCTestPage"
             }
         }
     }
+
     actions
     {
         area(Processing)
@@ -145,12 +146,12 @@ page 80283 "TTT-EBS-BCTestPage"
                         lr_Cust: Record Customer;
                         lc_BarcodeFromURL: Codeunit "TTT-EBS-BCBarcodeURL";
                     begin
-                        if not confirm(Text001Lbl, true) then
-                            error(Text002Lbl);
+                        if not confirm(MsgCreateTestBarcodeLbl, true) then
+                            error(ErrFunctionTerminatedLbl);
 
                         if strpos(v_BarcodeType, 'EAN13') > 0 then
                             if StrLen(v_BarcodeValue) <> 12 then
-                                Error(Text003Lbl);
+                                Error(ErrBarcodeMustBe12CharactersLongLbl);
 
                         if lr_Item.get(r_Item."No.") then
                             lc_BarcodeFromURL.CreateBarcode(lr_BarcodeEntries,
@@ -188,13 +189,14 @@ page 80283 "TTT-EBS-BCTestPage"
                     trigger OnAction();
 
                     begin
-                        Report.Run(report::"TTT-EBS-BCItemLabels");
+                        Report.Run(Report::"TTT-EBS-BCItemLabels");
                     end;
                 }
 
             }
         }
     }
+
     trigger OnOpenPage()
     begin
         v_BarcodeValue := '123456789012';  // TEST
@@ -209,7 +211,7 @@ page 80283 "TTT-EBS-BCTestPage"
         v_Height: Integer;
         v_Width: Integer;
         v_WithText: Boolean;
-        Text001Lbl: Label 'Create Test Barcode!';
-        Text002Lbl: Label 'Function terminated!';
-        Text003Lbl: Label 'Barcode Value must be 12 sign long!';
+        MsgCreateTestBarcodeLbl: Label 'Create Test Barcode!';
+        ErrFunctionTerminatedLbl: Label 'Function terminated!';
+        ErrBarcodeMustBe12CharactersLongLbl: Label 'Barcode Value must be 12 characters long!';
 }

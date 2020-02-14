@@ -39,6 +39,7 @@ page 80281 "TTT-EBS-BCBarcodeList"
             }
         }
     }
+
     actions
     {
         area(Processing)
@@ -62,7 +63,7 @@ page 80281 "TTT-EBS-BCBarcodeList"
                     var
                         lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
                     begin
-                        lr_BarcodeEntries.setrange("LinkSID", format(SystemId));
+                        lr_BarcodeEntries.SetRange("LinkSID", format(SystemId));
                         Page.Run(page::"TTT-EBS-BCBarcodeEntriesList", lr_BarcodeEntries);
                     end;
                 }

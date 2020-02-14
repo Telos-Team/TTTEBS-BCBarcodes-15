@@ -6,7 +6,7 @@ page 80285 "TTT-EBS-BCBarcodeTypeList"
     Caption = 'Barcode Type List';
     ApplicationArea = All;
     // UsageCategory = Administration;
-    UsageCategory = Lists;
+    UsageCategory = Administration;
 
     layout
     {

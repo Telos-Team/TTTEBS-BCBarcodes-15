@@ -10,10 +10,10 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         ErrBarcodeTypeMustNotBeBlankLbl: Label 'Barcode Type must not be blank!';
     begin
         if pValue = '' then
-            error(ErrValueMustNotBeBlankLbl);
+            Error(ErrValueMustNotBeBlankLbl);
 
         if pBarcodeType = '' then
-            error(ErrBarcodeTypeMustNotBeBlankLbl);
+            Error(ErrBarcodeTypeMustNotBeBlankLbl);
 
         // Find System ID, from called Record ID (use for finding or creating barcode)..
         lv_SysID := GetSystemIDFromRecordID(pRecID);
@@ -49,21 +49,13 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         lv_InStream: InStream;
         lv_OutStream: OutStream;
         lv_Method: Text;
-        lv_StrPos: Integer;
         CallFailedLbl: Label 'Barcode could not be created! (Service down)';
-
     begin
         if Handled then
             exit;
 
         lr_BarcodeType.get(pBarcodeEntries."BarcodeType");
-
-        // TTTEBS - Other soultion, to replace %1 with value >>  
-        // lv_Method := StrSubstNo(lr_BarcodeType.URL, pBarcodeEntries."Barcode Value");
-        lv_StrPos := StrPos(lr_BarcodeType.URL, '%1');
-        lv_Method := DelStr(lr_BarcodeType.URL, lv_StrPos, 2);
-        lv_Method := InsStr(lv_Method, pBarcodeEntries."BarcodeValue", lv_StrPos);
-        // TTTEBS <<
+        lv_Method := StrSubstNo(Format(lr_BarcodeType.URL), pBarcodeEntries."BarcodeValue");
 
         lv_HttpRequestMessage.SetRequestUri(lv_Method);
         if not lv_HttpClient.Send(lv_HttpRequestMessage, lv_HttpResponseMessage) then

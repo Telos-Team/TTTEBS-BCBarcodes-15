@@ -54,13 +54,13 @@ codeunit 80281 "TTT-EBS-BCBarcodeInstall"
                 exit;
 
             init();
-            code := 'EAN13';
+            Code := 'EAN13';
             URL := 'https://barcode.tec-it.com/barcode.ashx?data=%1&code=EAN13&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=jpg&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0';
             Insert();
-            code := 'CODE128';
+            Code := 'CODE128';
             URL := 'https://barcode.tec-it.com/barcode.ashx?data=%1&code=Code128&dpi=96&dataseparator=';
             Insert();
-            code := 'QR';
+            Code := 'QR';
             URL := 'https://barcode.tec-it.com/barcode.ashx?data=%1&code=QRCode&multiplebarcodes=false&translate-esc=false&unit=Fit&dpi=96&imagetype=Gif&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0&eclevel=L';
             Insert();
         end;

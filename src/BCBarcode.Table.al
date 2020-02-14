@@ -23,6 +23,7 @@ table 80281 "TTT-EBS-BCBarcode"
             DataClassification = SystemMetadata;
         }
     }
+
     keys
     {
         key(PK; "TableID", "LinkSID")
@@ -30,6 +31,7 @@ table 80281 "TTT-EBS-BCBarcode"
             Clustered = true;
         }
     }
+
     trigger OnDelete()
     var
         lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";

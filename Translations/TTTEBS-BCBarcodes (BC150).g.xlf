@@ -163,6 +163,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntriesList - Control SID - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 98530127 - Control 1873049818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>System ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntriesList - Control SID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 98530127 - Action 1809341352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Various Functions</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -368,20 +373,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarCodeReport01 - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 567291952 - NamedType 1196336482" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 567291952 - NamedType 938509423" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Test Barcode!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType Text001Lbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType MsgCreateTestBarcodeLbl</note>
         </trans-unit>
-        <trans-unit id="Page 567291952 - NamedType 1753513791" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 567291952 - NamedType 747335324" size-unit="char" translate="yes" xml:space="preserve">
           <source>Function terminated!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType Text002Lbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType ErrFunctionTerminatedLbl</note>
         </trans-unit>
-        <trans-unit id="Page 567291952 - NamedType 3779895200" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Barcode Value must be 12 sign long!</source>
+        <trans-unit id="Page 567291952 - NamedType 424912612" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Barcode Value must be 12 characters long!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType Text003Lbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType ErrBarcodeMustBe12CharactersLongLbl</note>
         </trans-unit>
         <trans-unit id="Report 1505703498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Barcode Entries Picture</source>
@@ -463,10 +468,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - ReportLabel PackingDateLbl</note>
         </trans-unit>
-        <trans-unit id="Report 3485729563 - NamedType 3779895200" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Barcode Value must be 12 sign long!</source>
+        <trans-unit id="Report 3485729563 - NamedType 424912612" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Barcode Value must be 12 characters long!</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - NamedType Text003Lbl</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - NamedType ErrBarcodeMustBe12CharactersLongLbl</note>
         </trans-unit>
       </group>
     </body>

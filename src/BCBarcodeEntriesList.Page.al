@@ -1,6 +1,5 @@
 page 80282 "TTT-EBS-BCBarcodeEntriesList"
 {
-
     PageType = List;
     SourceTable = "TTT-EBS-BCBarcodeEntries";
     Caption = 'Barcode Entries List';
@@ -67,10 +66,12 @@ page 80282 "TTT-EBS-BCBarcodeEntriesList"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the System ID of the current record';
+                    Caption = 'System ID';
                 }
             }
         }
     }
+
     actions
     {
         area(Processing)
@@ -102,12 +103,17 @@ page 80282 "TTT-EBS-BCBarcodeEntriesList"
             }
         }
     }
+
     trigger OnAfterGetRecord()
     begin
         CalcFields(Barcode);
+
         IF barcode.HasValue() then
             v_Barcode := true;
+
     end;
+
+
 
     var
         v_Barcode: Boolean;
