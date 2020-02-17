@@ -27,7 +27,7 @@ page 80283 "TTT-EBS-BCTestPage"
                 {
                     ApplicationArea = All;
                     Caption = 'Barcode Value';
-                    ToolTip = 'Specifies the Barcode Value, on wich we generate the Barcode blob - Only for testing';
+                    ToolTip = 'Specifies the Barcode Value, on wich we generate the Barcode picture - Only for testing';
                 }
             }
             group(Parameters)
@@ -104,7 +104,7 @@ page 80283 "TTT-EBS-BCTestPage"
 
                     trigger OnAction()
                     begin
-                        Page.Run(page::"TTT-EBS-BCBarcodeEntriesList");
+                        Page.Run(page::"TTT-EBS-BCBarcodeEntryList");
                     end;
                 }
                 action(BarcodeTypeList)
@@ -141,17 +141,17 @@ page 80283 "TTT-EBS-BCTestPage"
 
                     trigger OnAction()
                     var
-                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
+                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntry";
                         lr_Item: Record Item;
                         lr_Cust: Record Customer;
                         lc_BarcodeFromURL: Codeunit "TTT-EBS-BCBarcodeURL";
                     begin
-                        if not confirm(MsgCreateTestBarcodeLbl, true) then
-                            error(ErrFunctionTerminatedLbl);
+                        if not confirm(CreateTestBarcodeLbl, true) then
+                            error(FunctionTerminatedErr);
 
                         if strpos(v_BarcodeType, 'EAN13') > 0 then
                             if StrLen(v_BarcodeValue) <> 12 then
-                                Error(ErrBarcodeMustBe12CharactersLongLbl);
+                                Error(BarcodeMustBe12CharactersLongErr);
 
                         if lr_Item.get(r_Item."No.") then
                             lc_BarcodeFromURL.CreateBarcode(lr_BarcodeEntries,
@@ -211,7 +211,7 @@ page 80283 "TTT-EBS-BCTestPage"
         v_Height: Integer;
         v_Width: Integer;
         v_WithText: Boolean;
-        MsgCreateTestBarcodeLbl: Label 'Create Test Barcode!';
-        ErrFunctionTerminatedLbl: Label 'Function terminated!';
-        ErrBarcodeMustBe12CharactersLongLbl: Label 'Barcode Value must be 12 characters long!';
+        CreateTestBarcodeLbl: Label 'Create Test Barcode!';
+        FunctionTerminatedErr: Label 'Function terminated!';
+        BarcodeMustBe12CharactersLongErr: Label 'Barcode Value must be 12 characters long!';
 }

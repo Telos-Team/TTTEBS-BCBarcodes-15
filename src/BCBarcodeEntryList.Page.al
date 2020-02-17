@@ -1,8 +1,8 @@
-page 80282 "TTT-EBS-BCBarcodeEntriesList"
+page 80282 "TTT-EBS-BCBarcodeEntryList"
 {
     PageType = List;
-    SourceTable = "TTT-EBS-BCBarcodeEntries";
-    Caption = 'Barcode Entries List';
+    SourceTable = "TTT-EBS-BCBarcodeEntry";
+    Caption = 'Barcode Entry List';
     ApplicationArea = All;
     UsageCategory = Lists;
 
@@ -38,17 +38,17 @@ page 80282 "TTT-EBS-BCBarcodeEntriesList"
                 field(Height; Height)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the Hight of the Barcode Blob - Optional';
+                    ToolTip = 'Specifies the Hight of the Barcode picture - Optional';
                 }
                 field(Width; Width)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the Width of the Barcode Blob - Optional';
+                    ToolTip = 'Specifies the Width of the Barcode picture - Optional';
                 }
                 field("With Text"; "WithText")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies if the Barcode Blob is With Text - Optional';
+                    ToolTip = 'Specifies if the Barcode picture is With Text - Optional';
                 }
                 field("Barcode Value"; "BarcodeValue")
                 {
@@ -59,8 +59,8 @@ page 80282 "TTT-EBS-BCBarcodeEntriesList"
                 {
                     ApplicationArea = All;
                     Editable = false;
-                    Caption = 'Barcode HasValue';
-                    ToolTip = 'Specifies if the Barcode has value';
+                    Caption = 'Barcode Exists';
+                    ToolTip = 'Specifies if the Barcode Exists';
                 }
                 field("SID"; Format(SystemId))
                 {
@@ -93,11 +93,11 @@ page 80282 "TTT-EBS-BCBarcodeEntriesList"
 
                     trigger OnAction()
                     var
-                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
+                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntry";
                     begin
                         lr_BarcodeEntries.setrange("LinkSID", "LinkSID");
                         lr_BarcodeEntries.SetRange("EntryNo.", "EntryNo.");
-                        report.Run(report::"TTT-EBS-BCBarcodeEntriesPictur", true, true, lr_BarcodeEntries);
+                        report.Run(report::"TTT-EBS-BCBarcodeEntryPicture", true, true, lr_BarcodeEntries);
                     end;
                 }
             }
@@ -110,10 +110,7 @@ page 80282 "TTT-EBS-BCBarcodeEntriesList"
 
         IF barcode.HasValue() then
             v_Barcode := true;
-
     end;
-
-
 
     var
         v_Barcode: Boolean;

@@ -1,9 +1,9 @@
-table 80282 "TTT-EBS-BCBarcodeEntries"
+table 80282 "TTT-EBS-BCBarcodeEntry"
 {
-    Caption = 'Barcode Entries';
+    Caption = 'Barcode Entry';
     DataClassification = CustomerContent;
-    LookupPageId = "TTT-EBS-BCBarcodeEntriesList";
-    DrillDownPageId = "TTT-EBS-BCBarcodeEntriesList";
+    LookupPageId = "TTT-EBS-BCBarcodeEntryList";
+    DrillDownPageId = "TTT-EBS-BCBarcodeEntryList";
 
     fields
     {

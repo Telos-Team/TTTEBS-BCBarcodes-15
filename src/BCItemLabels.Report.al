@@ -51,7 +51,7 @@ report 80281 "TTT-EBS-BCItemLabels"
                         exit;
                     if strpos(v_BarcodeType, 'EAN13') > 0 then
                         if StrLen("Cross-Reference No.") <> 12 then
-                            Error(ErrBarcodeMustBe12CharactersLongLbl);
+                            Error(BarcodeMustBe12CharactersLongErr);
                     c_BarCodeFromURL.CreateBarcode(r_BarcodeEntries,
                                                     RecordId(),
                                                     "Cross-Reference No.",
@@ -123,7 +123,7 @@ report 80281 "TTT-EBS-BCItemLabels"
     }
 
     var
-        r_BarcodeEntries: record "TTT-EBS-BCBarcodeEntries";
+        r_BarcodeEntries: record "TTT-EBS-BCBarcodeEntry";
         c_BarCodeFromURL: Codeunit "TTT-EBS-BCBarCodeURL";
         v_PrintWOBarcode: Boolean;
         v_Type: code[20];
@@ -131,6 +131,6 @@ report 80281 "TTT-EBS-BCItemLabels"
         v_Height: Integer;
         v_Width: Integer;
         v_WithText: Boolean;
-        ErrBarcodeMustBe12CharactersLongLbl: Label 'Barcode Value must be 12 characters long!';
+        BarcodeMustBe12CharactersLongErr: Label 'Barcode Value must be 12 characters long!';
 
 }

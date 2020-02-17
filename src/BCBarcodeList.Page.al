@@ -61,10 +61,10 @@ page 80281 "TTT-EBS-BCBarcodeList"
 
                     trigger OnAction()
                     var
-                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
+                        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntry";
                     begin
                         lr_BarcodeEntries.SetRange("LinkSID", format(SystemId));
-                        Page.Run(page::"TTT-EBS-BCBarcodeEntriesList", lr_BarcodeEntries);
+                        Page.Run(page::"TTT-EBS-BCBarcodeEntryList", lr_BarcodeEntries);
                     end;
                 }
             }

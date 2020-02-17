@@ -34,7 +34,7 @@ table 80281 "TTT-EBS-BCBarcode"
 
     trigger OnDelete()
     var
-        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntries";
+        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntry";
     begin
         lr_BarcodeEntries.SetRange("LinkSID", SystemId);
         lr_BarcodeEntries.DeleteAll(true);

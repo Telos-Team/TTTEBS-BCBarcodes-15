@@ -1,19 +1,19 @@
 codeunit 80282 "TTT-EBS-BCBarcodeURL"
 {
-    procedure CreateBarcode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntries"; pRecID: RecordId; pValue: Code[20]; pType: Code[20]; pBarcodeType: Code[20]; pHeight: Integer; pWidth: Integer; pWithText: Boolean)
+    procedure CreateBarcode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntry"; pRecID: RecordId; pValue: Code[20]; pType: Code[20]; pBarcodeType: Code[20]; pHeight: Integer; pWidth: Integer; pWithText: Boolean)
     var
         lr_Barcode: Record "TTT-EBS-BCBarcode";
         lv_SysID: Guid;
         lv_TableID: Integer;
         lv_Handled: Boolean;
-        ErrValueMustNotBeBlankLbl: Label 'Value Value must not be blank!';
-        ErrBarcodeTypeMustNotBeBlankLbl: Label 'Barcode Type must not be blank!';
+        ValueMustNotBeBlankErr: Label 'Value Value must not be blank!';
+        BarcodeTypeMustNotBeBlankErr: Label 'Barcode Type must not be blank!';
     begin
         if pValue = '' then
-            Error(ErrValueMustNotBeBlankLbl);
+            Error(ValueMustNotBeBlankErr);
 
         if pBarcodeType = '' then
-            Error(ErrBarcodeTypeMustNotBeBlankLbl);
+            Error(BarcodeTypeMustNotBeBlankErr);
 
         // Find System ID, from called Record ID (use for finding or creating barcode)..
         lv_SysID := GetSystemIDFromRecordID(pRecID);
@@ -24,23 +24,22 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
 
         // Find or Create in Table "BarCodeEntries" (PKEY -> Link SID + Entry No)
         lv_SysID := GetSystemIDFromRecordID(lr_Barcode.RecordId());
-        if CreateBarcodeEntries(pBarcodeEntries,
-                                    lv_SysID,
-                                    pValue,
-                                    pType,
-                                    pBarcodeType,
-                                    pHeight,
-                                    pWidth,
-                                    pWithText
-                                    ) then
-            lv_Handled := true;
-
-        OnBeforeCreateBarCode(pBarcodeEntries, lv_Handled);
-        DoCreateBarCode(pBarcodeEntries, lv_Handled);
-        OnAfterCreateBarCode(pBarcodeEntries);
+        if CreateBarcodeEntry(pBarcodeEntries,
+                                lv_SysID,
+                                pValue,
+                                pType,
+                                pBarcodeType,
+                                pHeight,
+                                pWidth,
+                                pWithText
+                                ) then begin
+            OnBeforeCreateBarCode(pBarcodeEntries, lv_Handled);
+            DoCreateBarCode(pBarcodeEntries, lv_Handled);
+            OnAfterCreateBarCode(pBarcodeEntries);
+        end;
     end;
 
-    local procedure DoCreateBarCode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntries"; var Handled: Boolean);
+    local procedure DoCreateBarCode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntry"; var pHandled: Boolean);
     var
         lr_BarcodeType: Record "TTT-EBS-BCBarcodeType";
         lv_HttpClient: HttpClient;
@@ -49,9 +48,9 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         lv_InStream: InStream;
         lv_OutStream: OutStream;
         lv_Method: Text;
-        CallFailedLbl: Label 'Barcode could not be created! (Service down)';
+        CallFailedErr: Label 'Barcode could not be created! (Service down)';
     begin
-        if Handled then
+        if pHandled then
             exit;
 
         lr_BarcodeType.get(pBarcodeEntries."BarcodeType");
@@ -59,7 +58,7 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
 
         lv_HttpRequestMessage.SetRequestUri(lv_Method);
         if not lv_HttpClient.Send(lv_HttpRequestMessage, lv_HttpResponseMessage) then
-            Error(CallFailedLbl);
+            Error(CallFailedErr);
         lv_HttpResponseMessage.Content().ReadAs(lv_InStream);
         pBarcodeEntries.Barcode.CreateOutStream(lv_OutStream);
         CopyStream(lv_OutStream, lv_InStream);
@@ -99,7 +98,7 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         end;
     end;
 
-    procedure CreateBarcodeEntries(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntries"; pSysID: Guid; pValue: Code[20]; pType: Code[20]; pBarcodeType: Code[20]; pHeight: Integer; pWidth: Integer; pWithText: Boolean): Boolean;
+    procedure CreateBarcodeEntry(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntry"; pSysID: Guid; pValue: Code[20]; pType: Code[20]; pBarcodeType: Code[20]; pHeight: Integer; pWidth: Integer; pWithText: Boolean): Boolean;
     var
         lv_NextEntryNo: Integer;
     begin
@@ -115,7 +114,7 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
 
             if FindFirst() then begin
                 CalcFields(Barcode);
-                exit(true);
+                exit(false);
             end;
 
             SetRange("BarcodeValue");
@@ -139,16 +138,17 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
             "WithText" := pWithText;
             "BarcodeValue" := pValue;
             Insert(true);
+            exit(true);
         end;
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnBeforeCreateBarCode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntries"; var Handled: Boolean);
+    local procedure OnBeforeCreateBarCode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntry"; var Handled: Boolean);
     begin
     end;
 
     [IntegrationEvent(false, false)]
-    local procedure OnAfterCreateBarCode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntries");
+    local procedure OnAfterCreateBarCode(var pBarcodeEntries: Record "TTT-EBS-BCBarcodeEntry");
     begin
     end;
 }
