@@ -24,6 +24,7 @@ table 80282 "TTT-EBS-BCBarcodeEntry"
         }
         field(120; "BarcodeType"; Code[20])
         {
+            TableRelation = "TTT-EBS-BCBarcodeType";
             Caption = 'Barcode Type';
             DataClassification = CustomerContent;
         }

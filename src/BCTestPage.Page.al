@@ -15,12 +15,14 @@ page 80283 "TTT-EBS-BCTestPage"
                 {
                     ApplicationArea = All;
                     TableRelation = Item;
+                    Caption = 'Item No.';
                     ToolTip = 'Specifies Item No. - Only for testing';
                 }
                 field("Customer No."; r_Cust."No.")
                 {
                     ApplicationArea = All;
                     TableRelation = Customer;
+                    Caption = 'Customer No.';
                     ToolTip = 'Specifies Customer No. - Only for testing';
                 }
                 field("Barcode Value"; v_BarcodeValue)
@@ -41,8 +43,8 @@ page 80283 "TTT-EBS-BCTestPage"
                 field("Barcode Type"; v_BarcodeType)
                 {
                     ApplicationArea = All;
-                    Caption = 'Barcode Type';
                     TableRelation = "TTT-EBS-BCBarcodeType";
+                    Caption = 'Barcode Type';
                     ToolTip = 'Specifies Barcode Type - Only for testing';
                 }
                 field("Height"; v_Height)
@@ -83,7 +85,7 @@ page 80283 "TTT-EBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
-                    Image = "8ball";
+                    Image = ListPage;
                     ToolTip = 'View Barcode List - Only for testing';
 
                     trigger OnAction()
@@ -91,16 +93,16 @@ page 80283 "TTT-EBS-BCTestPage"
                         Page.Run(page::"TTT-EBS-BCBarcodeList");
                     end;
                 }
-                action(BarcodeEntriesList)
+                action(BarcodeEntryList)
                 {
                     Promoted = true;
                     PromotedIsBig = true;
-                    Caption = 'Barcode Entries List';
+                    Caption = 'Barcode Entry List';
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
-                    Image = "8ball";
-                    ToolTip = 'View Barcode Entries List - Only for testing';
+                    Image = EntriesList;
+                    ToolTip = 'View Barcode Entry List - Only for testing';
 
                     trigger OnAction()
                     begin
@@ -115,7 +117,7 @@ page 80283 "TTT-EBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
-                    Image = "8ball";
+                    Image = SetupList;
                     ToolTip = 'View Barcode Type List - Only for testing';
 
                     trigger OnAction()
@@ -124,6 +126,7 @@ page 80283 "TTT-EBS-BCTestPage"
                     end;
                 }
             }
+
             group(Testing)
             {
                 Caption = 'Testing';
@@ -136,7 +139,7 @@ page 80283 "TTT-EBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Process;
                     PromotedOnly = true;
-                    Image = "8ball";
+                    Image = TestFile;
                     ToolTip = 'Create Test Barcode - Only for testing';
 
                     trigger OnAction()
@@ -151,7 +154,7 @@ page 80283 "TTT-EBS-BCTestPage"
 
                         if strpos(v_BarcodeType, 'EAN13') > 0 then
                             if StrLen(v_BarcodeValue) <> 12 then
-                                Error(BarcodeMustBe12CharactersLongErr);
+                                Error(BarcodeMustBe12CharactersLongErr, v_BarcodeValue);
 
                         if lr_Item.get(r_Item."No.") then
                             lc_BarcodeFromURL.CreateBarcode(lr_BarcodeEntries,
@@ -183,16 +186,14 @@ page 80283 "TTT-EBS-BCTestPage"
                     ApplicationArea = All;
                     PromotedCategory = Report;
                     PromotedOnly = true;
-                    Image = "8ball";
+                    Image = TestReport;
                     ToolTip = 'Run test report - "Item Labels", that also generate barcodes - Only for testing';
 
                     trigger OnAction();
-
                     begin
                         Report.Run(Report::"TTT-EBS-BCItemLabels");
                     end;
                 }
-
             }
         }
     }
@@ -213,5 +214,5 @@ page 80283 "TTT-EBS-BCTestPage"
         v_WithText: Boolean;
         CreateTestBarcodeLbl: Label 'Create Test Barcode!';
         FunctionTerminatedErr: Label 'Function terminated!';
-        BarcodeMustBe12CharactersLongErr: Label 'Barcode Value must be 12 characters long!';
+        BarcodeMustBe12CharactersLongErr: Label 'Barcode Value %1, must be 12 characters long!', Comment = '%1 = Barcode Value';
 }

@@ -6,7 +6,7 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         lv_SysID: Guid;
         lv_TableID: Integer;
         lv_Handled: Boolean;
-        ValueMustNotBeBlankErr: Label 'Value Value must not be blank!';
+        ValueMustNotBeBlankErr: Label 'Value must not be blank!';
         BarcodeTypeMustNotBeBlankErr: Label 'Barcode Type must not be blank!';
     begin
         if pValue = '' then

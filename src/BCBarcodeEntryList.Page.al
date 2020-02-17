@@ -87,7 +87,7 @@ page 80282 "TTT-EBS-BCBarcodeEntryList"
                     Caption = 'Show Barcode';
                     ApplicationArea = All;
                     PromotedCategory = Process;
-                    Image = "8ball";
+                    Image = Picture;
                     PromotedOnly = true;
                     ToolTip = 'View the Barcode';
 

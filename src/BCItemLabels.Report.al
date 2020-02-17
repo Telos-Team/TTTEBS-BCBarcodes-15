@@ -91,6 +91,7 @@ report 80281 "TTT-EBS-BCItemLabels"
                     field("BarcodeType"; v_BarcodeType)
                     {
                         ApplicationArea = Basic, Suite;
+                        TableRelation = "TTT-EBS-BCBarcodeType";
                         Caption = 'Barcode Type';
                         ToolTip = 'Set Barcode Type';
                     }

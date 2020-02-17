@@ -55,7 +55,7 @@ page 80281 "TTT-EBS-BCBarcodeList"
                     Caption = 'Barcode Entries';
                     ApplicationArea = All;
                     PromotedCategory = Process;
-                    Image = "8ball";
+                    Image = EntriesList;
                     PromotedOnly = true;
                     ToolTip = 'View the linked Barcode Entries';
 
