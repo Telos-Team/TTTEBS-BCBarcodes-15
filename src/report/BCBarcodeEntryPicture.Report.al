@@ -4,7 +4,7 @@ report 80282 "TTT-EBS-BCBarcodeEntryPicture"
     ApplicationArea = All;
 
     DefaultLayout = RDLC;
-    RDLCLayout = '.\src\BCBarcodeEntryPicture.Report.rdl';
+    RDLCLayout = '.\layout\BCBarcodeEntryPicture.Report.rdl';
     Caption = 'Barcode Entry Picture';
     PreviewMode = Normal;
 

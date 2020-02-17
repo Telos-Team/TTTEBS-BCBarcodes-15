@@ -4,7 +4,7 @@ report 80281 "TTT-EBS-BCItemLabels"
     ApplicationArea = All;
 
     DefaultLayout = RDLC;
-    RDLCLayout = '.\src\BCItemLabels.Report.rdl';
+    RDLCLayout = '.\layout\BCItemLabels.Report.rdl';
     Caption = 'Item Labels';
 
     UseRequestPage = true;
