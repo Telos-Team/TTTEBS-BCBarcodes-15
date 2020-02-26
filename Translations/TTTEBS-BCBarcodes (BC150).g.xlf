@@ -13,10 +13,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcode - Field TableID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2627546255 - Field 249566538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2627546255 - Field 1358485564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link System ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcode - Field LinkSID - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcode - Field LinkSystemID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2627546255 - Field 1866390916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Link Record ID</source>
@@ -28,15 +28,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeEntry - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3294910803 - Field 249566538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Link SID</source>
+        <trans-unit id="Table 3294910803 - Field 1358485564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Link System ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeEntry - Field LinkSID - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeEntry - Field LinkSystemID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3294910803 - Field 268735261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3294910803 - Field 1016130111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Entry No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeEntry - Field EntryNo. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeEntry - Field EntryNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3294910803 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Type</source>
@@ -83,6 +83,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeType - Field Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 660179255 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table TTT-EBS-BCBarcodeType - Field Description - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 660179255 - Field 3003898253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>URL</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -100,7 +105,7 @@
         </trans-unit>
         <trans-unit id="Codeunit 1966132594 - Method 2415438909 - NamedType 376675608" size-unit="char" translate="yes" xml:space="preserve">
           <source>Barcode could not be created! (Service down)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Developer" annotates="general" priority="2">x</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit TTT-EBS-BCBarcodeURL - Method DoCreateBarCode - NamedType CallFailedErr</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -108,43 +113,43 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3958566205 - Control 4238358690 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the System ID from the linked table Barcode (Part of primary key)</source>
+        <trans-unit id="Page 3958566205 - Control 1390298068 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the System ID from the linked table Barcode (Part of primary key).</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Link SID - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Link SystemID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 883711285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies several Barcode Entries per Barcode (Part of primary key)</source>
+          <source>Specifies several Barcode Entries per Barcode (Part of primary key).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Entry No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies a type - Optional</source>
+          <source>Specifies a type - Optional.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 3093544144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies wich Barcode Type used (EAN13, Code128, QR, and so on..)</source>
+          <source>Specifies wich Barcode Type used (EAN13, Code128, QR, and so on.).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Barcode Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 3581037481 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the Hight of the Barcode picture - Optional</source>
+          <source>Specifies the Hight of the Barcode picture - Optional.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Height - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 613790498 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the Width of the Barcode picture - Optional</source>
+          <source>Specifies the Width of the Barcode picture - Optional.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Width - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 3869237313 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if the Barcode picture is With Text - Optional</source>
+          <source>Specifies if the Barcode picture is With Text - Optional.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control With Text - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 3607143985 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Barcode</source>
+          <source>Specifies the value of the Barcode.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Barcode Value - Property ToolTip</note>
         </trans-unit>
@@ -154,24 +159,19 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Barcode HasValue - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Control 2882497975 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies if the Barcode Exists</source>
+          <source>Specifies if the Barcode Exists.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control Barcode HasValue - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3958566205 - Control 1873049818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the System ID of the current record</source>
+        <trans-unit id="Page 3958566205 - Control 298983724 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the System ID of the current record.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control SID - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control SystemID - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3958566205 - Control 1873049818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3958566205 - Control 298983724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>System ID</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control SID - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3958566205 - Action 1809341352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Various Functions</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Action VariousFunctions - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Control SystemID - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Action 3497441505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Barcode</source>
@@ -179,7 +179,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Action ShowBarcode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3958566205 - Action 3497441505 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View the Barcode</source>
+          <source>View the Barcode.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeEntryList - Action ShowBarcode - Property ToolTip</note>
         </trans-unit>
@@ -189,29 +189,24 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2735288889 - Control 3135334477 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Table ID of which table the Barcode is generated (Part of primary key)</source>
+          <source>Specifies Table ID of which table the Barcode is generated (Part of primary key).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Control Table ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2735288889 - Control 4238358690 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the unik System ID from the linked Table-ID (Part of primary key)</source>
+          <source>Specifies the unique System ID from the linked Table-ID (Part of primary key).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Control Link SID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2735288889 - Control 1553913865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the unik Record ID from wich the Barcode is generated</source>
+          <source>Specifies the unique Record ID from wich the Barcode is generated.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Control Link RID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2735288889 - Control 1873049818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the System ID of the current record</source>
+          <source>Specifies the System ID of the current record.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Control SID - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2735288889 - Action 1650050144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Barcode</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Action Barcode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2735288889 - Action 1905428818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Barcode Entries</source>
@@ -219,7 +214,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Action BarcodeEntries - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2735288889 - Action 1905428818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View the linked Barcode Entries</source>
+          <source>View the linked Barcode Entries.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeList - Action BarcodeEntries - Property ToolTip</note>
         </trans-unit>
@@ -229,9 +224,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeTypeList - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3667448097 - Control 3004954119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the "Barcode" Code (Primary Key)</source>
+          <source>Specifies the "Barcode" Code (Primary Key).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeTypeList - Control Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3667448097 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the "Barcode" description.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeTypeList - Control Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3667448097 - Control 3003898253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the URL used, to generate the Barcode - See: https://barcode.tec-it.com/en</source>
@@ -239,7 +239,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCBarcodeTypeList - Control URL - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Test Page</source>
+          <source>Barcode Test Page</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Property Caption</note>
         </trans-unit>
@@ -249,7 +249,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Item No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Item No. - Only for testing</source>
+          <source>Specifies Item No. - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Item No. - Property ToolTip</note>
         </trans-unit>
@@ -259,7 +259,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Customer No. - Only for testing</source>
+          <source>Specifies Customer No. - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Customer No. - Property ToolTip</note>
         </trans-unit>
@@ -269,7 +269,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Barcode Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 3607143985 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the Barcode Value, on wich we generate the Barcode picture - Only for testing</source>
+          <source>Specifies the Barcode Value, on wich we generate the Barcode picture - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Barcode Value - Property ToolTip</note>
         </trans-unit>
@@ -279,7 +279,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Type - Only for testing</source>
+          <source>Specifies Type - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Type - Property ToolTip</note>
         </trans-unit>
@@ -289,7 +289,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Barcode Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 3093544144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Barcode Type - Only for testing</source>
+          <source>Specifies Barcode Type - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Barcode Type - Property ToolTip</note>
         </trans-unit>
@@ -299,7 +299,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Height - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 3581037481 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Height - Only for testing</source>
+          <source>Specifies Height - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Height - Property ToolTip</note>
         </trans-unit>
@@ -309,7 +309,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Width - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 613790498 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies Width - Only for testing</source>
+          <source>Specifies Width - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control Width - Property ToolTip</note>
         </trans-unit>
@@ -319,14 +319,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control With Text - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Control 3869237313 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies With Text - Only for testing</source>
+          <source>Specifies With Text - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Control With Text - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 567291952 - Action 1922505915 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>In General</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action InGeneral - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 1461647114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Barcode List</source>
@@ -334,7 +329,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarcodeList - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 1461647114 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View Barcode List - Only for testing</source>
+          <source>View Barcode List - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarcodeList - Property ToolTip</note>
         </trans-unit>
@@ -344,7 +339,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarcodeEntryList - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 970307270 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View Barcode Entry List - Only for testing</source>
+          <source>View Barcode Entry List - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarcodeEntryList - Property ToolTip</note>
         </trans-unit>
@@ -354,14 +349,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarcodeTypeList - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 2273210466 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>View Barcode Type List - Only for testing</source>
+          <source>View Barcode Type List - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarcodeTypeList - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 567291952 - Action 3246098898 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Testing</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action Testing - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 988390506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Create Test Barcode</source>
@@ -369,7 +359,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action CreateTestBarcode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 988390506 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Create Test Barcode - Only for testing</source>
+          <source>Create Test Barcode - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action CreateTestBarcode - Property ToolTip</note>
         </trans-unit>
@@ -379,7 +369,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarCodeReport01 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 567291952 - Action 2779085109 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Run test report - "Item Labels", that also generate barcodes - Only for testing</source>
+          <source>Run test report - "Item Labels", that also generate barcodes - Only for testing.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - Action BarCodeReport01 - Property ToolTip</note>
         </trans-unit>
@@ -399,7 +389,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page TTT-EBS-BCTestPage - NamedType BarcodeMustBe12CharactersLongErr</note>
         </trans-unit>
         <trans-unit id="Report 2448160639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Barcode Entry Picture</source>
+          <source>Barcode Entry Pictures</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCBarcodeEntryPicture - Property Caption</note>
         </trans-unit>
@@ -453,15 +443,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - Control Height - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Report 3485729563 - Control 4283509714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Widht</source>
+        <trans-unit id="Report 3485729563 - Control 613790498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Width</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - Control Widht - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - Control Width - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 3485729563 - Control 4283509714 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set Widht</source>
+        <trans-unit id="Report 3485729563 - Control 613790498 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set Width</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - Control Widht - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report TTT-EBS-BCItemLabels - Control Width - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 3485729563 - Control 423255705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>With Text</source>

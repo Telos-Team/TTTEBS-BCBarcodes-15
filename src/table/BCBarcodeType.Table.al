@@ -12,6 +12,11 @@ table 80283 "TTT-EBS-BCBarcodeType"
             Caption = 'Code';
             DataClassification = CustomerContent;
         }
+        field(9; Description; Text[50])
+        {
+            Caption = 'Description';
+            DataClassification = CustomerContent;
+        }
         field(10; URL; Text[250])
         {
             Caption = 'URL';

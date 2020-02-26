@@ -2,10 +2,9 @@ report 80282 "TTT-EBS-BCBarcodeEntryPicture"
 {
     UsageCategory = Lists;
     ApplicationArea = All;
-
     DefaultLayout = RDLC;
     RDLCLayout = '.\layout\BCBarcodeEntryPicture.Report.rdl';
-    Caption = 'Barcode Entry Picture';
+    Caption = 'Barcode Entry Pictures';
     PreviewMode = Normal;
 
     dataset
@@ -18,10 +17,10 @@ report 80282 "TTT-EBS-BCBarcodeEntryPicture"
             column(BarcodeValue; "BarcodeValue")
             {
             }
-            column(EntryNo; "EntryNo.")
+            column(EntryNo; "EntryNo")
             {
             }
-            column(LinkSID; "LinkSID")
+            column(LinkSID; "LinkSystemID")
             {
             }
             column(WithText; "WithText")

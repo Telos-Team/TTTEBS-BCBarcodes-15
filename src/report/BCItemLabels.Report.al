@@ -2,11 +2,9 @@ report 80281 "TTT-EBS-BCItemLabels"
 {
     UsageCategory = Lists;
     ApplicationArea = All;
-
     DefaultLayout = RDLC;
     RDLCLayout = '.\layout\BCItemLabels.Report.rdl';
     Caption = 'Item Labels';
-
     UseRequestPage = true;
 
     dataset
@@ -49,7 +47,7 @@ report 80281 "TTT-EBS-BCItemLabels"
                 begin
                     IF v_PrintWOBarcode then
                         exit;
-                    if strpos(v_BarcodeType, 'EAN13') > 0 then
+                    if StrPos(v_BarcodeType, 'EAN13') > 0 then
                         if StrLen("Cross-Reference No.") <> 12 then
                             Error(BarcodeMustBe12CharactersLongErr);
                     c_BarCodeFromURL.CreateBarcode(r_BarcodeEntries,
@@ -101,11 +99,11 @@ report 80281 "TTT-EBS-BCItemLabels"
                         Caption = 'Height';
                         ToolTip = 'Set Height';
                     }
-                    field("Widht"; v_Width)
+                    field("Width"; v_Width)
                     {
                         ApplicationArea = Basic, Suite;
-                        Caption = 'Widht';
-                        ToolTip = 'Set Widht';
+                        Caption = 'Width';
+                        ToolTip = 'Set Width';
                     }
                     field("WithText"; v_WithText)
                     {

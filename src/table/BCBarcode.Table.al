@@ -12,7 +12,7 @@ table 80281 "TTT-EBS-BCBarcode"
             Caption = 'Table ID';
             DataClassification = CustomerContent;
         }
-        field(2; "LinkSID"; Guid)
+        field(2; "LinkSystemID"; Guid)
         {
             Caption = 'Link System ID';
             DataClassification = SystemMetadata;
@@ -26,7 +26,7 @@ table 80281 "TTT-EBS-BCBarcode"
 
     keys
     {
-        key(PK; "TableID", "LinkSID")
+        key(PK; "TableID", "LinkSystemID")
         {
             Clustered = true;
         }
@@ -34,9 +34,9 @@ table 80281 "TTT-EBS-BCBarcode"
 
     trigger OnDelete()
     var
-        lr_BarcodeEntries: Record "TTT-EBS-BCBarcodeEntry";
+        lr_BarcodeEntry: Record "TTT-EBS-BCBarcodeEntry";
     begin
-        lr_BarcodeEntries.SetRange("LinkSID", SystemId);
-        lr_BarcodeEntries.DeleteAll(true);
+        lr_BarcodeEntry.SetRange("LinkSystemID", SystemId);
+        lr_BarcodeEntry.DeleteAll(true);
     end;
 }
