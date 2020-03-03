@@ -7,12 +7,12 @@ table 80282 "TTT-EBS-BCBarcodeEntry"
 
     fields
     {
-        field(1; "LinkSystemID"; Guid)
+        field(1; LinkSystemID; Guid)
         {
             Caption = 'Link System ID';
             DataClassification = SystemMetadata;
         }
-        field(2; "EntryNo"; Integer)
+        field(2; EntryNo; Integer)
         {
             Caption = 'Entry No.';
             DataClassification = CustomerContent;
@@ -22,7 +22,7 @@ table 80282 "TTT-EBS-BCBarcodeEntry"
             Caption = 'Type';
             DataClassification = CustomerContent;
         }
-        field(120; "BarcodeType"; Code[20])
+        field(120; BarcodeType; Code[20])
         {
             TableRelation = "TTT-EBS-BCBarcodeType";
             Caption = 'Barcode Type';
@@ -38,12 +38,12 @@ table 80282 "TTT-EBS-BCBarcodeEntry"
             Caption = 'Width';
             DataClassification = CustomerContent;
         }
-        field(150; "WithText"; Boolean)
+        field(150; WithText; Boolean)
         {
             Caption = 'With Text';
             DataClassification = CustomerContent;
         }
-        field(160; "BarcodeValue"; Code[100])
+        field(160; BarcodeValue; Text[250])
         {
             Caption = 'Barcode Value';
             DataClassification = CustomerContent;
@@ -57,7 +57,7 @@ table 80282 "TTT-EBS-BCBarcodeEntry"
 
     keys
     {
-        key(PK; "LinkSystemID", "EntryNo")
+        key(PK; LinkSystemID, EntryNo)
         {
             Clustered = true;
         }

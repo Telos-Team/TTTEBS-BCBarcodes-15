@@ -49,14 +49,14 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         lv_InStream: InStream;
         lv_OutStream: OutStream;
         lv_Method: Text;
-        CallFailedErr: Label 'Barcode could not be created! (Service down)', Comment = 'x';
+        HttpCallFailedErr: Label 'Barcode could not be created! (Error: %1)', Comment = '%1 = Error message';
     begin
         lr_BarcodeType.get(pBarcodeEntry."BarcodeType");
         lv_Method := StrSubstNo(Format(lr_BarcodeType.URL), pBarcodeEntry."BarcodeValue");
 
         lv_HttpRequestMessage.SetRequestUri(lv_Method);
         if not lv_HttpClient.Send(lv_HttpRequestMessage, lv_HttpResponseMessage) then
-            Error(CallFailedErr);
+            Error(HttpCallFailedErr, lv_HttpRequestMessage.GetRequestUri());  // TTTEBS - Better to find reason for not Send!
 
         if lv_HttpResponseMessage.Content().ReadAs(lv_InStream) then begin
             pBarcodeEntry.Barcode.CreateOutStream(lv_OutStream);
@@ -80,12 +80,16 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
             SetRange("TableID", pTableID);
             SetRange("LinkSystemID", pSysID);
             if FindFirst() then
-                exit;
+                // If record renamed -> Delete, and recreate..
+                if LinkRecordID <> pRecID then
+                    Delete(true)
+                else
+                    exit;
 
             Init();
             "TableID" := pTableID;
             "LinkSystemID" := pSysID;
-            "LinkRecordID" := Format(pRecID);
+            "LinkRecordID" := pRecID;
             Insert(true);
         end;
     end;

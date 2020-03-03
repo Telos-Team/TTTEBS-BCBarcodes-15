@@ -7,17 +7,17 @@ table 80281 "TTT-EBS-BCBarcode"
 
     fields
     {
-        field(1; "TableID"; Integer)
+        field(1; TableID; Integer)
         {
             Caption = 'Table ID';
             DataClassification = CustomerContent;
         }
-        field(2; "LinkSystemID"; Guid)
+        field(2; LinkSystemID; Guid)
         {
             Caption = 'Link System ID';
             DataClassification = SystemMetadata;
         }
-        field(100; "LinkRecordID"; Text[150])
+        field(100; LinkRecordID; RecordId)
         {
             Caption = 'Link Record ID';
             DataClassification = SystemMetadata;
@@ -26,7 +26,7 @@ table 80281 "TTT-EBS-BCBarcode"
 
     keys
     {
-        key(PK; "TableID", "LinkSystemID")
+        key(PK; TableID, LinkSystemID)
         {
             Clustered = true;
         }
@@ -36,7 +36,7 @@ table 80281 "TTT-EBS-BCBarcode"
     var
         lr_BarcodeEntry: Record "TTT-EBS-BCBarcodeEntry";
     begin
-        lr_BarcodeEntry.SetRange("LinkSystemID", SystemId);
+        lr_BarcodeEntry.SetRange(LinkSystemID, SystemId);
         lr_BarcodeEntry.DeleteAll(true);
     end;
 }

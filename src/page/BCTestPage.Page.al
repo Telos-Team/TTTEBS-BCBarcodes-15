@@ -11,21 +11,21 @@ page 80283 "TTT-EBS-BCTestPage"
         {
             group(General)
             {
-                field("Item No."; r_Item."No.")
+                field(ItemNo; r_Item."No.")
                 {
                     ApplicationArea = All;
                     TableRelation = Item;
                     Caption = 'Item No.';
                     ToolTip = 'Specifies Item No. - Only for testing.';
                 }
-                field("Customer No."; r_Cust."No.")
+                field(CustomerNo; r_Cust."No.")
                 {
                     ApplicationArea = All;
                     TableRelation = Customer;
                     Caption = 'Customer No.';
                     ToolTip = 'Specifies Customer No. - Only for testing.';
                 }
-                field("Barcode Value"; v_BarcodeValue)
+                field(BarcodeValue; v_BarcodeValue)
                 {
                     ApplicationArea = All;
                     Caption = 'Barcode Value';
@@ -34,20 +34,20 @@ page 80283 "TTT-EBS-BCTestPage"
             }
             group(Parameters)
             {
-                field("Type"; v_Type)
+                field(Type; v_Type)
                 {
                     ApplicationArea = All;
                     Caption = 'Type';
                     ToolTip = 'Specifies Type - Only for testing.';
                 }
-                field("Barcode Type"; v_BarcodeType)
+                field(BarcodeType; v_BarcodeType)
                 {
                     ApplicationArea = All;
                     TableRelation = "TTT-EBS-BCBarcodeType";
                     Caption = 'Barcode Type';
                     ToolTip = 'Specifies Barcode Type - Only for testing.';
                 }
-                field("Height"; v_Height)
+                field(Height; v_Height)
                 {
                     ApplicationArea = All;
                     Caption = 'Height';
@@ -59,7 +59,7 @@ page 80283 "TTT-EBS-BCTestPage"
                     Caption = 'Width';
                     ToolTip = 'Specifies Width - Only for testing.';
                 }
-                field("With Text"; v_WithText)
+                field(WithText; v_WithText)
                 {
                     ApplicationArea = All;
                     Caption = 'With Text';
@@ -75,10 +75,10 @@ page 80283 "TTT-EBS-BCTestPage"
         {
             action(BarcodeList)
             {
-                Promoted = true;
-                PromotedIsBig = true;
                 Caption = 'Barcode List';
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 Image = ListPage;
@@ -91,10 +91,10 @@ page 80283 "TTT-EBS-BCTestPage"
             }
             action(BarcodeEntryList)
             {
-                Promoted = true;
-                PromotedIsBig = true;
                 Caption = 'Barcode Entry List';
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 Image = EntriesList;
@@ -107,10 +107,10 @@ page 80283 "TTT-EBS-BCTestPage"
             }
             action(BarcodeTypeList)
             {
-                Promoted = true;
-                PromotedIsBig = true;
                 Caption = 'Barcode Type List';
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 Image = SetupList;
@@ -123,10 +123,10 @@ page 80283 "TTT-EBS-BCTestPage"
             }
             action("CreateTestBarcode")
             {
-                Promoted = true;
-                PromotedIsBig = true;
                 Caption = 'Create Test Barcode';
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
                 PromotedCategory = Process;
                 PromotedOnly = true;
                 Image = TestFile;
@@ -169,10 +169,10 @@ page 80283 "TTT-EBS-BCTestPage"
             }
             action("BarCodeReport01")
             {
-                Promoted = true;
-                PromotedIsBig = true;
                 Caption = 'Barcode report';
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedIsBig = true;
                 PromotedCategory = Report;
                 PromotedOnly = true;
                 Image = TestReport;
