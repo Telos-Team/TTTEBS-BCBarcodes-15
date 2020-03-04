@@ -54,18 +54,18 @@ page 80282 "TTT-EBS-BCBarcodeEntryList"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Barcode.';
                 }
-                field(BarcodeHasValue; barcode.HasValue())
+                field(BarcodeHasValue; Barcode.HasValue())
                 {
                     ApplicationArea = All;
-                    Editable = false;
                     Caption = 'Barcode Exists';
+                    Editable = false;
                     ToolTip = 'Specifies if the Barcode Exists.';
                 }
                 field(SystemID; Format(SystemId))
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the System ID of the current record.';
                     Caption = 'System ID';
+                    ToolTip = 'Specifies the System ID of the current record.';
                 }
             }
             group(BarcodePicture)

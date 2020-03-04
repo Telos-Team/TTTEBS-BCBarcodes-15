@@ -28,11 +28,13 @@ page 80281 "TTT-EBS-BCBarcodeList"
                 field(LinkRecordID; Format(LinkRecordID))
                 {
                     ApplicationArea = All;
+                    Caption = 'Link Record ID';
                     ToolTip = 'Specifies the unique Record ID from wich the Barcode is generated.';
                 }
                 field(SystemID; Format(SystemId))
                 {
                     ApplicationArea = All;
+                    Caption = 'System ID';
                     ToolTip = 'Specifies the System ID of the current record.';
                 }
             }

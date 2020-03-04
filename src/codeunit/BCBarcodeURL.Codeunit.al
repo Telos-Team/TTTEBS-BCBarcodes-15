@@ -19,10 +19,10 @@ codeunit 80282 "TTT-EBS-BCBarcodeURL"
         lv_SysID := GetSystemIDFromRecordID(pRecID);
         lv_TableID := pRecID.TableNo();
 
-        // Find or Create in Table "BarCode" (PKEY -> Table ID + Link System ID)
+        // Find or Create in Table "BarCode" (PK -> Table ID + Link System ID)
         CreateBarcode(lr_Barcode, lv_TableID, lv_SysID, pRecID);
 
-        // Find or Create in Table "BarCodeEntry" (PKEY -> Link SID + Entry No)
+        // Find or Create in Table "BarCodeEntry" (PK -> Link SID + Entry No)
         lv_SysID := GetSystemIDFromRecordID(lr_Barcode.RecordId());
         if CreateBarcodeEntry(pBarcodeEntry,
                                 lv_SysID,
